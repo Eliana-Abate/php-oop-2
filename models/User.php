@@ -4,21 +4,25 @@ class User
 {
   protected $name;
   protected $surname;
-  protected $email;
+  protected $newsletter_subscribed;
   protected $discount;
 
 
 
-    protected function __construct($_name, $_surname, $_email)
+    protected function __construct($_name, $_surname, $_newsletter_subscribed)
     {
         $this->name = $_name;
         $this->surname = $_surname;
-        $this->email = $_email;
+        $this->newsletter_subscribed = $_newsletter_subscribed;
     }
 
-    private function setDiscount($_newsletter_subscribed) {
+    public function getFullName() {
+        return $this->name . ' ' . $this->surname;
+    }
 
-        if ($_newsletter_subscribed) {
+    private function setDiscount() {
+
+        if ($this->newsletter_subscribed) {
             $this->discount = 10;
         } else {
             $this->discount = 0;
@@ -27,7 +31,7 @@ class User
     }
 
     protected function getDiscount() {
-        $this->setDiscount($_newsletter_subscribed);
+        $this->setDiscount();
         return $this->discount;
     }
 

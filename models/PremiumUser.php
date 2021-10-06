@@ -7,20 +7,20 @@ class PremiumUser extends User
   protected $level;
   protected $discount;
 
-    protected function __construct($_name, $_surname, $_email, $_level) {
+    protected function __construct($_name, $_surname, $_newsletter_subscribed, $_level) {
 
         $this->level = $_level;
-        parent::__construct($_name, $_surname, $_email);
+        parent::__construct($_name, $_surname, $_newsletter_subscribed);
     }
 
 
-    private function setDiscount($_newsletter_subscribed) {
+    private function setDiscount() {
 
-        if ($this->level > 1 && $_newsletter_subscribed) {
+        if ($this->level > 1 && $this->newsletter_subscribed) {
 
             $this->discount = 25;
 
-        } else if ($this->level > 1 && !$_newsletter_subscribed) {
+        } else if ($this->level > 1 && !$this->newsletter_subscribed) {
 
             $this->discount = 20;
 
@@ -32,7 +32,7 @@ class PremiumUser extends User
     }
 
     protected function getDiscount() {
-        $this->setDiscount($_newsletter_subscribed);
+        $this->setDiscount();
         return $this->discount;
     }
 
