@@ -9,12 +9,11 @@ class User
 
 
 
-    protected function __construct($_name, $_surname, $_email, $_discount)
+    protected function __construct($_name, $_surname, $_email)
     {
         $this->name = $_name;
         $this->surname = $_surname;
         $this->email = $_email;
-        $this->discount = $_discount;
     }
 
     private function setDiscount($_newsletter_subscribed) {

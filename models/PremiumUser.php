@@ -5,11 +5,12 @@
 class PremiumUser extends User
 {
   protected $level;
+  protected $discount;
 
-    protected function __construct($_name, $_surname, $_email, $_discount, $_level) {
+    protected function __construct($_name, $_surname, $_email, $_level) {
 
         $this->level = $_level;
-        parent::__construct($_name, $_surname, $_email, $_discount);
+        parent::__construct($_name, $_surname, $_email);
     }
 
 
