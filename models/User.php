@@ -9,6 +9,7 @@ class User
   protected $newsletter_subscribed;
   protected $discount;
   protected $last_purchase;
+  protected $last_price;
 
 
 
@@ -27,9 +28,14 @@ class User
         $this->newsletter_subscribed = $subscription;
     }
 
-    public function setLastPurchase() {
-        return $this->last_purchase = new Product ('Bic', '4567', '10g', 'Euro 2');
+    public function setLastPurchase($product) {
+        return $this->last_purchase = $product;
     }
+
+    public function getLastPurchase() {
+        return $this->last_purchase;
+    }
+
 
     private function setDiscount() {
 
@@ -45,6 +51,14 @@ class User
         $this->setDiscount();
         return $this->discount;
     }
+
+    /*public function setLastPrice($prezzo, $sconto) {
+        $prezzo = $this->getLastPurchase()->price;
+        $sconto = $this->discount; 
+        return $this->last_price = $prezzo - ($prezzo * $sconto / 100);
+    } */
+    
+    
 
     
 }
