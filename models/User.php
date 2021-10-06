@@ -28,6 +28,7 @@ class User
     }
 
     protected function getDiscount() {
+        $this->setDiscount($_newsletter_subscribed);
         return $this->discount;
     }
 
