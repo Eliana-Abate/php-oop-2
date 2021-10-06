@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . '/Product.php' ?> 
+<?php require_once __DIR__ . '/CreditCard.php' ?> 
 
 <?php 
 
@@ -9,7 +10,9 @@ class User
   protected $newsletter_subscribed;
   protected $discount;
   protected $last_purchase;
-  protected $last_price;
+  public $discounted_price;
+  protected $credit_card;
+  
 
 
 
@@ -24,9 +27,9 @@ class User
         return $this->name . ' ' . $this->surname;
     }
 
-    public function setNewsletter($subscription) {
+    /* TESTER: public function setNewsletter($subscription) {
         $this->newsletter_subscribed = $subscription;
-    }
+    }*/ 
 
     public function setLastPurchase($product) {
         return $this->last_purchase = $product;
@@ -53,12 +56,21 @@ class User
     }
 
     /*public function setLastPrice($prezzo, $sconto) {
-        $prezzo = $this->getLastPurchase()->price;
-        $sconto = $this->discount; 
-        return $this->last_price = $prezzo - ($prezzo * $sconto / 100);
+        $this->getLastPurchase()->price = $prezzo;
+        $this->discount = $sconto; 
+        return $this->discounted_price = $prezzo - ($prezzo * $sconto / 100);
     } */
     
+
+    public function setCreditCard($card) {
+        return $this->credit_card = $card;
+    }
+
     
+    
+    /*public function getCreditCard() {
+        return $this->credit_card = getCardDetails();
+      }*/
 
     
 }

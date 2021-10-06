@@ -1,4 +1,6 @@
+<?php require_once __DIR__ . '/Product.php' ?> 
 <?php require_once __DIR__ . '/User.php' ?> 
+
 
 <?php 
 

@@ -37,6 +37,14 @@
                 <h4>Ultimo prodotto acquistato:</h4>
                 <p>Prodotto: <?php echo $user1->getLastPurchase()->brand . ' ' . $user1->getLastPurchase()->name?></p>
                 <p>Prezzo originale: <?php echo $user1->getLastPurchase()->price ?></p>
+                <p>Prezzo scontato: </p>
+                <br>
+
+                <!-- Metodo di pagamento -->
+                <?php $card1 = new CreditCard ('Mastercard', '1111-2222-3333', '31/12/2021'); ?>
+                <?php $user1->setCreditCard($card1); ?>
+                <h4>Metodo di pagamento utilizzato:</h4>
+                <p>Carta di credito: </p>
                 <br>
             
             </li>
