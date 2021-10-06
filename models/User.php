@@ -9,7 +9,7 @@ class User
 
 
 
-    public function __construct($_name, $_surname, $_email, $_discount)
+    protected function __construct($_name, $_surname, $_email, $_discount)
     {
         $this->name = $_name;
         $this->surname = $_surname;
@@ -27,7 +27,7 @@ class User
 
     }
 
-    public function getDiscount() {
+    protected function getDiscount() {
         return $this->discount;
     }
 
