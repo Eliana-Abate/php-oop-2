@@ -1,5 +1,6 @@
-<?php require_once __DIR__ . '/models/PremiumUser.php' ?>
 <?php require_once __DIR__ . '/models/User.php' ?>
+
+<?php require_once __DIR__ . '/models/PremiumUser.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,11 @@
     <?php $user1 = new User ('John', 'Doe', true); ?>
     <h3><?php echo $user1->getFullName() ?></h3>
     <p>Il tuo sconto è del <?php echo $user1->getDiscount() ?> % </p>
- 
+    
+    <?php var_dump($user1); ?>
+    <?php $user1->setNewsletter(false); ?> 
+    <p>Il tuo sconto è del <?php echo $user1->getDiscount() ?> % </p>
+    <?php var_dump($user1); ?>
 
     </section>
 

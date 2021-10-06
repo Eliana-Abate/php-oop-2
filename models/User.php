@@ -6,10 +6,11 @@ class User
   protected $surname;
   protected $newsletter_subscribed;
   protected $discount;
+  protected $last_purchase;
 
 
 
-    protected function __construct($_name, $_surname, $_newsletter_subscribed)
+    public function __construct($_name, $_surname, $_newsletter_subscribed)
     {
         $this->name = $_name;
         $this->surname = $_surname;
@@ -18,6 +19,10 @@ class User
 
     public function getFullName() {
         return $this->name . ' ' . $this->surname;
+    }
+
+    public function setNewsletter($subscription) {
+        $this->newsletter_subscribed = $subscription;
     }
 
     private function setDiscount() {
@@ -30,7 +35,7 @@ class User
 
     }
 
-    protected function getDiscount() {
+    public function getDiscount() {
         $this->setDiscount();
         return $this->discount;
     }

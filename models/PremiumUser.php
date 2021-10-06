@@ -7,7 +7,7 @@ class PremiumUser extends User
   protected $level;
   protected $discount;
 
-    protected function __construct($_name, $_surname, $_newsletter_subscribed, $_level) {
+    public function __construct($_name, $_surname, $_newsletter_subscribed, $_level) {
 
         $this->level = $_level;
         parent::__construct($_name, $_surname, $_newsletter_subscribed);
@@ -31,7 +31,7 @@ class PremiumUser extends User
 
     }
 
-    protected function getDiscount() {
+    public function getDiscount() {
         $this->setDiscount();
         return $this->discount;
     }
