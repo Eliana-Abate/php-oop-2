@@ -37,7 +37,7 @@
                 <h4>Ultimo prodotto acquistato:</h4>
                 <p>Prodotto: <?php echo $user1->getLastPurchase()->brand . ' ' . $user1->getLastPurchase()->name?></p>
                 <p>Prezzo originale: <?php echo $user1->getLastPurchase()->price ?></p>
-                <p>Prezzo scontato: </p>
+                <p>Prezzo di acquisto: <?php echo $user1->getDiscountedPrice() ?> $USD </p>
                 <br>
 
                 <!-- Metodo di pagamento -->

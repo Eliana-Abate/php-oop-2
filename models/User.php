@@ -55,11 +55,10 @@ class User
         return $this->discount;
     }
 
-    /*public function setLastPrice($prezzo, $sconto) {
-        $this->getLastPurchase()->price = $prezzo;
-        $this->discount = $sconto; 
-        return $this->discounted_price = $prezzo - ($prezzo * $sconto / 100);
-    } */
+    public function getDiscountedPrice() {
+        $this->discounted_price = $this->last_purchase->price - ($this->last_purchase->price * ($this->discount / 100));
+       return  $this->discounted_price;
+    } 
     
 
     public function setCreditCard($card) {
