@@ -10,6 +10,22 @@
     <title>OOP Ereditarietà</title>
 </head>
 <body>
+    <section id="user">
+    <h1>User</h1>
+    <?php $user1 = new User ('John', 'Doe', true); ?>
+    <h3><?php echo $user1->getFullName() ?></h3>
+    <p>Il tuo sconto è del <?php echo $user1->getDiscount() ?> % </p>
+ 
+
+    </section>
+
+    <hr>
+
+    <section id="premium-user">
+    <h1>Premium User</h1>
+
+
+    </section>
     
 </body>
 </html>
