@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/Product.php' ?> 
+
 <?php 
 
 class User
@@ -23,6 +25,10 @@ class User
 
     public function setNewsletter($subscription) {
         $this->newsletter_subscribed = $subscription;
+    }
+
+    public function setLastPurchase() {
+        return $this->last_purchase = new Product ('Bic', '4567', '10g', 'Euro 2');
     }
 
     private function setDiscount() {
