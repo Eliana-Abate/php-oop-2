@@ -11,7 +11,7 @@ class User
   protected $discount;
   protected $last_purchase;
   public $discounted_price;
-  protected $credit_card;
+  public $credit_card;
   
 
 
@@ -67,9 +67,9 @@ class User
 
     
     
-    /*public function getCreditCard() {
-        return $this->credit_card = getCardDetails();
-      }*/
+    public function getCreditCard() {
+        return $this->credit_card->getCardDetails();
+    }
 
     
 }
