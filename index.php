@@ -32,19 +32,20 @@
                 <p>Il tuo sconto è del <?php echo $user1->getDiscount() ?> % </p>
 
                 <!-- Ultimo acquisto -->
-                <?php $product1 = new Product ('Stratocaster', 'Fender', '123456', '3,8 Kg', '1300 $USD'); ?>
+                <?php $product1 = new Product ('Stratocaster', 'Fender', '123456', '3,8 Kg', 1300); ?>
                 <?php $user1->setLastPurchase($product1); ?>
                 <h4>Ultimo prodotto acquistato:</h4>
                 <p>Prodotto: <?php echo $user1->getLastPurchase()->brand . ' ' . $user1->getLastPurchase()->name?></p>
-                <p>Prezzo originale: <?php echo $user1->getLastPurchase()->price ?></p>
+                <p>Prezzo originale: <?php echo $user1->getLastPurchase()->price ?> $USD </p>
                 <p>Prezzo di acquisto: <?php echo $user1->getDiscountedPrice() ?> $USD </p>
                 <br>
 
                 <!-- Metodo di pagamento -->
                 <?php $card1 = new CreditCard ('Mastercard', '1111-2222-3333', '31/12/2021'); ?>
                 <?php $user1->setCreditCard($card1); ?>
+                <?php var_dump($user1->credit_card->getCardDetails()); ?>
                 <h4>Metodo di pagamento utilizzato:</h4>
-                <p>Carta di credito: </p>
+                <p>Carta di credito: <?php $user1->getCreditCard(); ?></p>
                 <br>
             
             </li>
