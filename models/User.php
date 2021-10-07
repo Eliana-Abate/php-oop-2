@@ -32,7 +32,7 @@ class User
     }*/ 
 
     public function setLastPurchase($product) {
-        return $this->last_purchase = $product;
+        $this->last_purchase = $product;
     }
 
     public function getLastPurchase() {
@@ -62,7 +62,7 @@ class User
     
 
     public function setCreditCard($card) {
-        return $this->credit_card = $card;
+        $this->credit_card = $card;
     }
 
     
